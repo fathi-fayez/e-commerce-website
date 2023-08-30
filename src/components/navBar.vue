@@ -2,9 +2,9 @@
 <template>
   <nav class="navbar navbar-expand-lg shadow p-3">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <router-link class="navbar-brand" to="/">
         <img src="../assets/images/ecommerce-logo-png-11.png" alt="" />
-      </a>
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <router-link class="dropdown-item" to="/">Home</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Categories</a>
@@ -69,8 +69,25 @@
               <i class="fa-solid fa-user"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><a class="dropdown-item" href="#">Register</a></li>
+              <li>
+                <router-link class="dropdown-item" to="LoginPage"
+                  >Log In</router-link
+                >
+              </li>
+              <li>
+                <router-link class="dropdown-item" to="signupPage"
+                  >Register</router-link
+                >
+              </li>
+              <li>
+                <button
+                  @click="logOutButtonPressed"
+                  v-if="isLoggedIn"
+                  class="dropdown-item"
+                >
+                  Log Out
+                </button>
+              </li>
             </ul>
           </li>
         </ul>
@@ -80,8 +97,33 @@
 </template>
 <!-- eslint-disable -->
 <script>
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import router from "@/router";
 export default {
   name: "navBar",
+  data() {
+    return {
+      isLoggedIn: false,
+      auth: "",
+    };
+  },
+  methods: {
+    logOutButtonPressed() {
+      signOut(this.auth).then(() => {
+        router.push("/");
+      });
+    },
+  },
+  mounted() {
+    this.auth = getAuth();
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
+  },
 };
 </script>
 <!-- eslint-disable -->

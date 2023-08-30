@@ -1,10 +1,15 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <navBar />
+    <slider-section />
+  </div>
 </template>
 
 <script>
+import navBar from "../components/navBar.vue";
+import SliderSection from "@/components/sliderSection.vue";
 export default {
-  name: "HomeView",
-  components: {},
+  name: "homeView",
+  components: { SliderSection, navBar },
 };
 </script>

@@ -1,26 +1,10 @@
 <template>
-  <navBar />
-  <slider-section />
-  <category-pro-section />
-  <latest-pro-section />
-  <footer-section />
   <router-view />
 </template>
 <script>
-import CategoryProSection from "./components/categoryProSection,.vue";
-import FooterSection from "./components/footerSection.vue";
-import LatestProSection from "./components/latestProSection.vue";
-import navBar from "./components/navBar.vue";
-import SliderSection from "./components/sliderSection.vue";
 export default {
   name: "app",
-  components: {
-    navBar,
-    SliderSection,
-    CategoryProSection,
-    LatestProSection,
-    FooterSection,
-  },
+  components: {},
 };
 </script>
 
