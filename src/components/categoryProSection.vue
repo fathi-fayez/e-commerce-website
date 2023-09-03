@@ -1,5 +1,6 @@
 <!-- eslint-disable -->
 <template>
+  <navBar />
   <div class="container section-container">
     <div class="section-title text-center">
       <h2>Category Products</h2>
@@ -49,8 +50,10 @@
 </template>
 <!-- eslint-disable -->
 <script>
+import navBar from "@/components/navBar.vue";
 export default {
   name: "categoryProSection",
+  components: { navBar },
 };
 </script>
 <!-- eslint-disable -->

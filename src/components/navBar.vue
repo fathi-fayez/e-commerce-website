@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <nav class="navbar navbar-expand-lg shadow p-3">
+  <nav class="navbar navbar-expand-lg shadow p-3 sticky-top">
     <div class="container">
       <router-link class="navbar-brand" to="/">
         <img src="../assets/images/ecommerce-logo-png-11.png" alt="" />
@@ -18,14 +18,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item mx-2">
             <router-link class="dropdown-item" to="/">Home</router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+          <li class="nav-item mx-2">
+            <router-link class="dropdown-item" to="/categoryProSection"
+              >Categories</router-link
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
+            <router-link class="dropdown-item" to="/latestProSection"
+              >Shop</router-link
+            >
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
@@ -44,19 +48,19 @@
             </button>
           </form>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa-regular fa-heart"></i
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link position-relative" href="#">
+            <router-link
+              to="/cartPage"
+              class="nav-link position-relative"
+              href="#"
+            >
               <span
+                v-if="cratCount"
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               >
-                1
+                {{ cratCount }}
               </span>
               <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -105,16 +109,20 @@ export default {
     return {
       isLoggedIn: false,
       auth: "",
+      cratCount: 0,
     };
   },
   methods: {
     logOutButtonPressed() {
       signOut(this.auth).then(() => {
-        router.push("/");
+        router.push("/LoginPage");
       });
     },
   },
   mounted() {
+    if (localStorage.length > 0) {
+      this.cratCount = JSON.parse(localStorage.getItem("productCart")).length;
+    }
     this.auth = getAuth();
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
@@ -128,6 +136,9 @@ export default {
 </script>
 <!-- eslint-disable -->
 <style lang="scss">
+.navbar {
+  background: rgb(195, 28, 28);
+}
 button.search-btn {
   background-color: #e26329;
   color: #fff;

@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product20.png",
+      "id": 1,
+      "price": "$ 45",
+      "stars": 4
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product21.png",
+      "id": 2,
+      "price": "$ 3",
+      "stars": 3
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product22.png",
+      "id": 3,
+      "price": "$ 2.5",
+      "stars": 4
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product23.png",
+      "id": 4,
+      "price": "$ 4",
+      "stars": 5
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product24.png",
+      "id": 5,
+      "price": "$ 2",
+      "stars": 4
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product25.png",
+      "id": 6,
+      "price": "$ 3.5",
+      "stars": 2
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product26.png",
+      "id": 7,
+      "price": "$ 6",
+      "stars": 3
+    },
+    {
+      "name": "Organic Cauliflower (1kg)",
+      "image": "images/product/product27.png",
+      "id": 8,
+      "price": "$ 5",
+      "stars": 5
+    }
+  ]
+}

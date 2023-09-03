@@ -1,5 +1,6 @@
 <!-- eslint-disable -->
 <template>
+  <navBar :cratCount="cratCount" />
   <div class="container section-container">
     <div class="section-title text-center">
       <h2>Latest Products</h2>
@@ -7,132 +8,32 @@
     </div>
     <div class="products">
       <div class="row">
-        <div class="col-lg-3">
+        <div
+          v-for="product in products"
+          :key="product.id"
+          class="col-lg-3 mt-3"
+        >
           <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product27.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
+            <img :src="product.image" :alt="product.id" />
+            <h4>
+              <a href="">{{ product.name }}</a>
+            </h4>
             <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
+              <i
+                v-for="star in product.stars"
+                :key="star.id"
+                class="fa-solid fa-star"
+                style="color: #ffb301"
+              ></i>
             </div>
-            <h2>$ 2</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product28.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 3.5</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product29.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 5</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product25.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 6</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 mt-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product27.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 6</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 mt-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product28.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 6</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 mt-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product29.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 6</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 mt-3">
-          <div class="card border-0 shadow-sm text-center">
-            <img src="../assets/images/product/product30.png" alt="" />
-            <h4><a href="">Organic Cauliflower (1kg)</a></h4>
-            <div class="rating">
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-              <i class="fa-solid fa-star" style="color: #ffb301"></i>
-            </div>
-            <h2>$ 6</h2>
-            <a class="btn rounded-pill w-50 bg-success" href=""
-              >Add To Card <i class="fa-solid fa-cart-shopping"> </i>
-            </a>
+            <h2>{{ product.price }}</h2>
+            <button
+              @click="addToCard(product)"
+              class="btn rounded-pill w-50 bg-success"
+              href=""
+            >
+              Add To Card <i class="fa-solid fa-cart-shopping"> </i>
+            </button>
           </div>
         </div>
       </div>
@@ -141,8 +42,25 @@
 </template>
 <!-- eslint-disable -->
 <script>
+import navBar from "@/components/navBar.vue";
+import sourceData from "@/data.json";
 export default {
   name: "latestProSection",
+  components: { navBar },
+  data() {
+    return {
+      products: sourceData.products,
+      arrayOfCarts: [],
+    };
+  },
+  methods: {
+    addToCard(product) {
+      // console.log(this.arrayOfCarts);
+      this.arrayOfCarts.push(product);
+      localStorage.setItem("productCart", JSON.stringify(this.arrayOfCarts));
+      // console.log(JSON.parse(localStorage.getItem("productCart")));
+    },
+  },
 };
 </script>
 <!-- eslint-disable -->
