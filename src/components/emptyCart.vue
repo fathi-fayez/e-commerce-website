@@ -1,7 +1,9 @@
 <!-- eslint-disable -->
 <template>
-  <div class="main my-5">
+  <div class="main">
+    <i class="empty-cart fa-solid fa-cart-shopping"> </i>
     <h1>Your cart is empty</h1>
+    <p>You can go to home page and add items.</p>
   </div>
 </template>
 <!-- eslint-disable -->
@@ -10,3 +12,14 @@ export default {
   name: "emptycart",
 };
 </script>
+<!-- eslint-disable -->
+<style lang="scss">
+.main {
+  margin: 190px auto;
+}
+.empty-cart {
+  font-size: 100px;
+  color: green;
+  margin: 30px;
+}
+</style>

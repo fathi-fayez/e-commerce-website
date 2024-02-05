@@ -33,7 +33,6 @@ export default {
     signInButtonPressed() {
       signInWithEmailAndPassword(getAuth(), this.email, this.password)
         .then((data) => {
-          console.log("register done");
           router.push("/");
         })
         .catch((erorr) => {
@@ -56,8 +55,6 @@ export default {
         });
     },
   },
-
-  computed: {},
 };
 </script>
 <!-- eslint-disable -->

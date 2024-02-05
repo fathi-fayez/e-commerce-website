@@ -1,15 +1,16 @@
 <template>
   <div class="home">
-    <navBar />
-    <slider-section />
+    <headerSection />
+    <testimonials />
   </div>
 </template>
 
 <script>
-import navBar from "../components/navBar.vue";
-import SliderSection from "@/components/sliderSection.vue";
+import headerSection from "@/components/headerSection.vue";
+import Testimonials from "@/components/testimonials.vue";
 export default {
   name: "homeView",
-  components: { SliderSection, navBar },
+  components: { headerSection, Testimonials },
+  methods: {},
 };
 </script>

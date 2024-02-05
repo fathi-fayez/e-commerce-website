@@ -1,12 +1,18 @@
 <template>
   <div>
+    <nav-bar />
     <router-view />
+    <footer-section />
   </div>
 </template>
 <script>
+// import store from "@/store";
+import navBar from "./components/navBar.vue";
+import footerSection from "./components/footerSection.vue";
 export default {
   name: "app",
-  components: {},
+  components: { navBar, footerSection },
+  created() {},
 };
 </script>
 

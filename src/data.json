@@ -1,60 +1,100 @@
 {
   "products": [
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Tomato (1kg)",
       "image": "images/product/product20.png",
       "id": 1,
-      "price": "$ 45",
-      "stars": 4
+      "price": 45,
+      "stars": 4,
+      "category": "Vegetables"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Rice (1kg)",
       "image": "images/product/product21.png",
       "id": 2,
-      "price": "$ 3",
-      "stars": 3
+      "price": 3,
+      "stars": 3,
+      "category": "Vegetables"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Carrot (1kg)",
       "image": "images/product/product22.png",
       "id": 3,
-      "price": "$ 2.5",
-      "stars": 4
+      "price": 2,
+      "stars": 4,
+      "category": "Vegetables"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Onion (1kg)",
       "image": "images/product/product23.png",
       "id": 4,
-      "price": "$ 4",
-      "stars": 5
+      "price": 4,
+      "stars": 5,
+      "category": "Vegetables"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Apricot (1kg)",
       "image": "images/product/product24.png",
       "id": 5,
-      "price": "$ 2",
-      "stars": 4
+      "price": 2,
+      "stars": 4,
+      "category": "Fruits"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "squash (1kg)",
       "image": "images/product/product25.png",
       "id": 6,
-      "price": "$ 3.5",
-      "stars": 2
+      "price": 3,
+      "stars": 2,
+      "category": "Fruits"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Potatoe (1kg)",
       "image": "images/product/product26.png",
       "id": 7,
-      "price": "$ 6",
-      "stars": 3
+      "price": 6,
+      "stars": 3,
+      "category": "Vegetables"
     },
     {
-      "name": "Organic Cauliflower (1kg)",
+      "name": "Brokly (1kg)",
       "image": "images/product/product27.png",
+      "id": 7,
+      "price": 7,
+      "stars": 5,
+      "category": "Vegetables"
+    },
+    {
+      "name": "Corn (1kg)",
+      "image": "images/product/product29.png",
+      "id": 7,
+      "price": 6,
+      "stars": 3,
+      "category": "Vegetables"
+    },
+    {
+      "name": "Potatoe (1kg)",
+      "image": "images/product/product26.png",
+      "id": 7,
+      "price": 6,
+      "stars": 3,
+      "category": "Vegetables"
+    },
+    {
+      "name": "Apple (1kg)",
+      "image": "images/product/product30.png",
       "id": 8,
-      "price": "$ 5",
-      "stars": 5
+      "price": 5,
+      "stars": 5,
+      "category": "Fruits"
+    },
+    {
+      "name": "Panana (1kg)",
+      "image": "images/product/product31.png",
+      "id": 8,
+      "price": 5,
+      "stars": 5,
+      "category": "Fruits"
     }
   ]
 }

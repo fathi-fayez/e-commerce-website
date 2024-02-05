@@ -18,18 +18,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item mx-2">
-            <router-link class="dropdown-item" to="/">Home</router-link>
+          <li class="nav-item mx-3">
+            <router-link to="/">Home</router-link>
           </li>
-          <li class="nav-item mx-2">
-            <router-link class="dropdown-item" to="/categoryProSection"
-              >Categories</router-link
-            >
+          <li class="nav-item mx-3">
+            <router-link to="categorys">Categorys</router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="dropdown-item" to="/latestProSection"
-              >Shop</router-link
-            >
+          <li class="nav-item mx-3">
+            <router-link to="products">Products</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
@@ -54,10 +50,10 @@
               href="#"
             >
               <span
-                v-if="cratCount"
+                v-show="count"
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               >
-                {{ cratCount }}
+                {{ count }}
               </span>
               <i class="fa-solid fa-cart-shopping"> </i>
             </router-link>
@@ -103,13 +99,13 @@
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import router from "@/router";
+import store from "../store";
 export default {
   name: "navBar",
   data() {
     return {
       isLoggedIn: false,
       auth: "",
-      cratCount: 0,
     };
   },
   methods: {
@@ -119,9 +115,13 @@ export default {
       });
     },
   },
+  computed: {
+    count() {
+      return store.state.cartItemsCount;
+    },
+  },
   mounted() {
     if (localStorage.length > 0) {
-      this.cratCount = JSON.parse(localStorage.getItem("productCart")).length;
     }
     this.auth = getAuth();
     onAuthStateChanged(this.auth, (user) => {
@@ -137,8 +137,13 @@ export default {
 <!-- eslint-disable -->
 <style lang="scss">
 .navbar {
-  background: rgb(195, 28, 28);
+  background: #673ab7;
 }
+.router-link-exact-active {
+  color: #e26329 !important;
+  font-size: 18px;
+}
+
 button.search-btn {
   background-color: #e26329;
   color: #fff;
@@ -146,5 +151,8 @@ button.search-btn {
 }
 ul.action-menu .nav-item .nav-link {
   margin: 0 10px;
+}
+.nav-item a {
+  text-decoration: none;
 }
 </style>

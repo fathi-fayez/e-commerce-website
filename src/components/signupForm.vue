@@ -3,10 +3,13 @@
   <div class="container">
     <h1>Sign up</h1>
     <form @submit.prevent="signUpButtonPressed" action="">
-      <label for="username">Username</label>
-      <input v-model="email" type="text" name="username" />
+      <label for="fullName">Full Name</label>
+      <input v-model="fullName" type="text" name="fullName" />
+      <label for="email">Email</label>
+      <input v-model="email" type="text" name="email" />
       <label for="password">Password</label>
       <input v-model="password" type="password" name="password" />
+      <p v-if="errMsg">{{ errMsg }}</p>
       <input type="submit" value="submit" />
     </form>
   </div>
@@ -19,8 +22,10 @@ export default {
   name: "loginForm",
   data() {
     return {
+      fullName: "",
       email: "",
       password: "",
+      errMsg: "",
       emailValid: true,
       passwordValid: false,
       passwordTouched: false,
@@ -31,12 +36,25 @@ export default {
     signUpButtonPressed() {
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then((data) => {
-          console.log("register done");
           router.push("/");
         })
         .catch((erorr) => {
-          console.log(erorr.code);
-          alert(erorr.message);
+          switch (erorr.code) {
+            case "auth/invalid-email":
+              this.errMsg = "Invalid email";
+              break;
+            case "auth/user-not-found":
+              this.errMsg = "No account with that email was found";
+
+              break;
+
+            case "auth/wrong-password":
+              this.errMsg = "Incorrect password";
+              break;
+            default:
+              this.errMsg = "Email or password was incorrect";
+              break;
+          }
         });
     },
   },
@@ -61,6 +79,10 @@ form {
     background-color: rgb(36, 21, 238);
     border-radius: 8px;
     border-color: transparent;
+  }
+  p {
+    color: red;
+    font-size: 20px;
   }
 }
 </style>

@@ -8,26 +8,16 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/categoryProSection",
-    name: "categoryProSection",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/categorys",
+    name: "categorys",
     component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../components/categoryProSection.vue"
-      ),
+      import(/* webpackChunkName: "about" */ "../views/categoryProSection.vue"),
   },
   {
-    path: "/latestProSection",
-    name: "latestProSection",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/products",
+    name: "products",
     component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../components/latestProSection.vue"
-      ),
+      import(/* webpackChunkName: "about" */ "../views/latestProSection.vue"),
   },
   {
     path: "/cartPage",

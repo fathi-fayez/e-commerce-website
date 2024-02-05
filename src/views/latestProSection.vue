@@ -1,6 +1,5 @@
 <!-- eslint-disable -->
 <template>
-  <navBar :cratCount="cratCount" />
   <div class="container section-container">
     <div class="section-title text-center">
       <h2>Latest Products</h2>
@@ -15,9 +14,7 @@
         >
           <div class="card border-0 shadow-sm text-center">
             <img :src="product.image" :alt="product.id" />
-            <h4>
-              <a href="">{{ product.name }}</a>
-            </h4>
+            <h4>{{ product.name }}</h4>
             <div class="rating">
               <i
                 v-for="star in product.stars"
@@ -26,9 +23,9 @@
                 style="color: #ffb301"
               ></i>
             </div>
-            <h2>{{ product.price }}</h2>
+            <h2>{{ product.price }} $</h2>
             <button
-              @click="addToCard(product)"
+              @click="addToCart(product)"
               class="btn rounded-pill w-50 bg-success"
               href=""
             >
@@ -42,23 +39,19 @@
 </template>
 <!-- eslint-disable -->
 <script>
-import navBar from "@/components/navBar.vue";
 import sourceData from "@/data.json";
+import store from "../store";
 export default {
   name: "latestProSection",
-  components: { navBar },
+  components: {},
   data() {
     return {
       products: sourceData.products,
-      arrayOfCarts: [],
     };
   },
   methods: {
-    addToCard(product) {
-      // console.log(this.arrayOfCarts);
-      this.arrayOfCarts.push(product);
-      localStorage.setItem("productCart", JSON.stringify(this.arrayOfCarts));
-      // console.log(JSON.parse(localStorage.getItem("productCart")));
+    addToCart(product) {
+      store.dispatch("addToCart", product);
     },
   },
 };
@@ -66,23 +59,21 @@ export default {
 <!-- eslint-disable -->
 <style lang="scss">
 .card {
+  background: #eee !important;
+  overflow: hidden;
   img {
-    height: 190px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
     object-fit: contain;
     transition: 0.6s;
   }
-  h4 {
+  h3 {
     font-weight: 600;
     margin-top: 20px;
-    a {
-      text-decoration: none;
-    }
-  }
-  .rating {
-    margin: 5px 0;
   }
   .btn {
-    margin: 50px auto 10px;
+    margin: 20px auto;
     color: white;
     font-weight: bold;
   }
