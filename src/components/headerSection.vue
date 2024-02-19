@@ -107,5 +107,11 @@ export default {
 }
 .carousel-item img {
   max-width: 100%;
+  max-height: 100% !important;
+}
+@media (max-width: 768px) {
+  .slider {
+    padding: 20px;
+  }
 }
 </style>

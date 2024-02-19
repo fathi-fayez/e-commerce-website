@@ -47,7 +47,7 @@
             :src="testimonials[1].image"
             :alt="testimonials[1].text"
           />
-          <h6 class="testimonial-author">{{ testimonials[0].author }}</h6>
+          <h6 class="testimonial-author">{{ testimonials[1].author }}</h6>
         </div>
       </div>
     </div>
@@ -79,22 +79,22 @@ export default {
       testimonials: [
         {
           text: "Lorem ipsumtque, quam minus totam maiores laborum! Impedit consectetur illum aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus quis dolorem quas!",
-          author: "Steifany Crock",
+          author: "ebrahim gmal",
           image: "images/blog/post-author1.png",
         },
         {
           text: "Lorem ipsumtque, quam minus totam maiores laborum! Impedit consectetur illum aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus quis dolorem quas!",
-          author: "Sara Adams",
+          author: "salma elsayed",
           image: "images/blog/post-author2.png",
         },
         {
           text: "Lorem ipsumtque, quam minus totam maiores laborum! Impedit consectetur illum aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus quis dolorem quas!",
-          author: "John  Doe",
+          author: "omar abdelgawad",
           image: "images/blog/post-author3.png",
         },
         {
           text: "Lorem ipsumtque, quam minus totam maiores laborum! Impedit consectetur illum aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus quis dolorem quas!",
-          author: "sam Look",
+          author: "khaled elsharkawy",
           image: "images/blog/post-author4.png",
         },
       ],

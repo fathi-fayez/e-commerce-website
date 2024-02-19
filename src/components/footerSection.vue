@@ -2,7 +2,7 @@
 <template>
   <div class="footer py-5">
     <div class="row text-start">
-      <div class="col-lg-3">
+      <div class="col-6 col-lg-3">
         <img
           src="../assets/images/ecommerce-logo-png-11.png"
           height="50"
@@ -12,7 +12,7 @@
         <img src="../assets/images/store2.png" alt="" />
       </div>
 
-      <div class="col-lg-3">
+      <div class="col-6 col-lg-3">
         <h4>Information</h4>
         <ul class="footer-list">
           <li><a href="">About us</a></li>
@@ -22,7 +22,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-3">
+      <div class="col-6 col-lg-3">
         <h4>User Area</h4>
         <ul class="footer-list">
           <li><a href="">My account</a></li>
@@ -32,7 +32,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-3">
+      <div class="col-6 col-lg-3">
         <h4>Contact Info</h4>
         <p>+2010 2271 6283</p>
         <p>509 724 580 - issued in Egypt on 03/11/2019, expires 08/11/2023</p>
@@ -62,5 +62,10 @@ export default {
 a {
   text-decoration: none !important;
   color: black !important;
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px;
+  }
 }
 </style>
